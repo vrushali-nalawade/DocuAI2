@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+transformers
+torch
+pytesseract
+pillow
+textblob
+python-docx
+pymupdf
+pydantic
+python-multipart
+numpy
+scikit-learn
