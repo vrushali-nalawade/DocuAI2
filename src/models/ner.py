@@ -15,25 +15,17 @@ def get_ner_pipeline():
 
 
 def extract_hf_entities(text: str):
-    """
-    Extract entities using Hugging Face NER model.
-    Returns raw HF output.
-    """
     if not text or len(text.strip()) < 20:
         return []
 
     try:
         model = get_ner_pipeline()
 
-        # Keep inference manageable
-        cleaned_text = " ".join(text.split())
-
-        # Limit to first 2500 chars to reduce noise / speed issues
-        cleaned_text = cleaned_text[:2500]
+        cleaned_text = " ".join(text.split())[:2000]
 
         entities = model(cleaned_text)
         return entities
 
     except Exception as e:
-        print("HF NER failed:", e)
+        print("NER failed:", e)
         return []

@@ -4,10 +4,8 @@ from textblob import TextBlob
 from src.extractor_pdf import extract_text_from_pdf
 from src.extractor_docx import extract_text_from_docx
 from src.extractor_image import extract_text_from_image
-from src.models.classifier_zero_shot import (
-    detect_sentiment_zero_shot,
-    detect_tone_zero_shot
-)
+from src.models.sentiment import detect_sentiment
+from src.models.tone import detect_tone
 from src.utils import (
     clean_text,
     extract_amounts_regex,
